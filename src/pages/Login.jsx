@@ -67,17 +67,11 @@ function Login() {
                   type="email"
                   placeholder="Enter your email"
                   className="form-input"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                 />
               </div>
-              <input
-                type="email"
-                placeholder="Email"
-                className="form-input"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
             </div>
 
             <div className="form-group">
@@ -115,10 +109,8 @@ function Login() {
               </div>
             </div>
 
-            <button type="submit" className="btn btn-primary login-btn">
-              Sign In
             <button type="submit" className="btn btn-primary login-btn" disabled={loading}>
-              {loading ? 'Logging in...' : 'Login'}
+              {loading ? 'Logging in...' : 'Sign In'}
             </button>
           </form>
 
