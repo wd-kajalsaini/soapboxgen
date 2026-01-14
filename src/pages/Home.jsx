@@ -1,39 +1,116 @@
+import { useState, useRef } from 'react';
+
 function Home() {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const videoRef = useRef(null);
+
+  const handlePlayVideo = () => {
+    setIsVideoPlaying(true);
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
+
   return (
     <>
-      {/* Hero Section with Intro Video */}
-      <section className="hero">
-        <div className="container hero-container">
-          <div className="hero-content">
-            <h1 className="hero-title">Resumes get you screened.<br /><span className="accent">Video gets you seen.</span></h1>
-            <p className="hero-subtitle">Show recruiters who you really are in 30 seconds—before they decide based on keywords alone.</p>
-
-            <div className="cta-group">
-              <a href="https://tally.so/r/VLGzag" className="btn btn-primary" target="_blank" rel="noopener">
-                <span className="btn-text">I'm a Student - $29</span>
-                <span className="btn-subtext">One-time founding member price</span>
-              </a>
-              <a href="https://tally.so/r/ODQeeR" className="btn btn-secondary" target="_blank" rel="noopener">
-                <span className="btn-text">Join Waitlist - $49</span>
-                <span className="btn-subtext">General public founding price</span>
-              </a>
+      {/* Hero Section */}
+      <section className="hero-new">
+        <div className="container hero-new-container">
+          <div className="hero-new-content">
+            <div className="hero-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+              </svg>
+              AI-Powered Personal Branding
             </div>
 
-            <p className="launch-info">
-              <span className="badge">Early Access Launch</span>
-              <span className="separator">•</span>
-              Late February 2026
-              <span className="separator">•</span>
-              Limited to 100 Founding Members
+            <h1 className="hero-new-title">
+              Transform Your Job Applications with <span className="gradient-text">AI-Powered Personal Brand Videos</span>
+            </h1>
+
+            <p className="hero-new-subtitle">
+              Create compelling 30-second video introductions that showcase who you are, not just what you do. Stand out in competitive job markets with AI-generated scripts and professional video creation.
             </p>
+
+            <ul className="hero-features">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                AI-Generated Personalized Scripts
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Professional Video Creation in Minutes
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Integrate Personal Photos & Stories
+              </li>
+            </ul>
+
+            <div className="hero-new-buttons">
+              <a href="https://tally.so/r/VLGzag" className="btn-hero-primary" target="_blank" rel="noopener">
+                Create Your Personal Brand Video
+              </a>
+              <button className="btn-hero-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                </svg>
+                Watch Demo
+              </button>
+            </div>
+
+            <div className="hero-stats">
+              <div className="hero-stat">
+                <div className="stat-icon-wrapper blue">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <div className="stat-content">
+                  <span className="stat-number">2,500+</span>
+                  <span className="stat-label">Job Seekers Helped</span>
+                </div>
+              </div>
+              <div className="hero-stat">
+                <div className="stat-icon-wrapper green">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                    <polyline points="17 6 23 6 23 12"></polyline>
+                  </svg>
+                </div>
+                <div className="stat-content">
+                  <span className="stat-number">85%</span>
+                  <span className="stat-label">Interview Rate</span>
+                </div>
+              </div>
+              <div className="hero-stat">
+                <div className="stat-icon-wrapper purple">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </div>
+                <div className="stat-content">
+                  <span className="stat-number">4.9/5</span>
+                  <span className="stat-label">User Satisfaction</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="hero-image">
-            <img src="/Soapbox_Heroes.jpg" alt="Stand out from the crowd with SoapBoxGen" loading="eager" />
-            <div className="image-caption">
-              <h3>See the person behind the resume</h3>
-              <p>30-second video profiles that show communication, confidence, and personality.</p>
-            </div>
+          <div className="hero-new-image">
+            <img src="/Soapbox_Heroes.jpg" alt="Professional video branding" loading="eager" />
           </div>
         </div>
       </section>
@@ -45,9 +122,30 @@ function Home() {
           <div className="founder-intro-content">
             <div className="video-placeholder">
               <div className="video-frame">
-                <div className="video-inner">
-                  <div className="play-icon">▶</div>
-                  <p>Welcome to SoapBoxGen</p>
+                <div className="video-container">
+                  {!isVideoPlaying && (
+                    <div className="video-overlay" onClick={handlePlayVideo}>
+                      <img
+                        src="/videos/video-thumbnail.png"
+                        alt="Video thumbnail"
+                        className="video-thumbnail"
+                      />
+                      <button className="play-button" aria-label="Play video">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="white">
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </button>
+                    </div>
+                  )}
+                  <video
+                    ref={videoRef}
+                    width="100%"
+                    controls
+                    className={`founder-video ${isVideoPlaying ? 'visible' : 'hidden'}`}
+                  >
+                    <source src="/videos/Founders Message V2.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
             </div>
@@ -55,6 +153,7 @@ function Home() {
               <p className="founder-text">Hi, I'm Richard. I spent 19 years as a recruiter reviewing thousands of applications. I know exactly what gets candidates noticed—and what gets them ignored.</p>
               <p className="founder-text">I built SoapBoxGen because I saw too many qualified candidates disappear into resume black holes, while less qualified candidates with better connections got interviews.</p>
               <p className="founder-text emphasis">Your resume gets you screened. Video gets you seen.</p>
+              <p className="founder-signature">— Richard, Founder</p>
             </div>
           </div>
         </div>
@@ -247,33 +346,86 @@ function Home() {
       </section>
 
       {/* Benefits Section */}
-      <section className="benefits-section">
+      <section className="benefits-section-new">
         <div className="container">
-          <h2 className="section-title">What you get as a founding member</h2>
-          <div className="benefits-grid">
-            <div className="benefit-card">
-              <h3>AI-Powered Script Generation</h3>
-              <p>Upload your resume and get a personalized 30-second script highlighting your best attributes.</p>
+          <div className="benefits-header">
+            <h2 className="benefits-title">
+              Everything You Need to Create Your <span className="gradient-text">Personal Brand Video</span>
+            </h2>
+            <p className="benefits-subtitle">
+              Our AI-powered platform combines cutting-edge technology with proven personal branding strategies to help you create videos that truly represent who you are.
+            </p>
+          </div>
+
+          <div className="benefits-grid-new">
+            <div className="benefit-card-new">
+              <div className="benefit-icon blue">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+              </div>
+              <h3>AI Script Generation</h3>
+              <p>Get personalized 30-second scripts based on your resume, achievements, and personal brand assessment.</p>
             </div>
-            <div className="benefit-card">
-              <h3>Professional Recording Platform</h3>
-              <p>Browser-based recording with real-time quality coaching and unlimited practice takes.</p>
+
+            <div className="benefit-card-new">
+              <div className="benefit-icon purple">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M23 7l-7 5 7 5V7z"></path>
+                  <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                </svg>
+              </div>
+              <h3>Professional Video Creation</h3>
+              <p>Record directly in your browser with built-in teleprompter and professional templates.</p>
             </div>
-            <div className="benefit-card">
-              <h3>Quality Assurance Gates</h3>
-              <p>Can't submit until minimum standards are met—protects your professional image.</p>
+
+            <div className="benefit-card-new">
+              <div className="benefit-icon green">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                  <polyline points="21 15 16 10 5 21"></polyline>
+                </svg>
+              </div>
+              <h3>Personal Media Integration</h3>
+              <p>Showcase your personality with photos and videos that tell your unique story.</p>
             </div>
-            <div className="benefit-card">
-              <h3>Shareable Profile Link</h3>
-              <p>Clean, professional URL to include in applications and LinkedIn.</p>
+
+            <div className="benefit-card-new">
+              <div className="benefit-icon orange">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="6"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                </svg>
+              </div>
+              <h3>Personal Brand Assessment</h3>
+              <p>Discover your professional archetype with our 10-question assessment.</p>
             </div>
-            <div className="benefit-card">
-              <h3>Analytics Dashboard</h3>
-              <p>See who watched your video, when, and for how long.</p>
+
+            <div className="benefit-card-new">
+              <div className="benefit-icon indigo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <h3>Quick & Easy Process</h3>
+              <p>From signup to finished video in under 20 minutes. No technical skills required.</p>
             </div>
-            <div className="benefit-card">
-              <h3>Lifetime Access</h3>
-              <p>One-time payment. Update your video anytime. No subscriptions.</p>
+
+            <div className="benefit-card-new">
+              <div className="benefit-icon gray">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h3>Stand Out to Employers</h3>
+              <p>Make memorable first impressions that go beyond traditional resumes and cover letters.</p>
             </div>
           </div>
         </div>
